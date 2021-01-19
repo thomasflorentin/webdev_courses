@@ -7,8 +7,8 @@ var gulp = require("gulp"),
 
 var paths = {
     styles: {
-        src: "wp-content/themes/softech_theme/assets/sass/**/*.sass",
-        dest: "wp-content/themes/softech_theme/"
+        src: "htdocs/wp-content/themes/wp_courses/assets/sass/**/*.sass",
+        dest: "htdocs/wp-content/themes/wp_courses/"
     }
 };
 
