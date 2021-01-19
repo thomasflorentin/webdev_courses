@@ -43,7 +43,8 @@
             break;
     }
 
-
+    global $wp;
+    $current_url = home_url(add_query_arg(array(),$wp->request)) . '/';
 
 
 ?>
@@ -54,36 +55,40 @@
 
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-        <nav class="course_intro">
-            
-            <ul class="">
+        <aside class="sidebar ">
 
-                <li class="course_child">
-                    <a href="<?php echo $root_title_url; ?>" class="course_child_link">
-                        <?php echo get_the_title($root); ?>
-                    </a>
-                </li>
+            <nav class="course_menu">
+                
+                <ul class="">
 
-                <?php 
-                    foreach ( $children as $post ) :
-                                            
-                        setup_postdata($post); ?>
+                    <li class="course_child">
+                        <a href="<?php echo $root_title_url; ?>" class="course_child_link">
+                            <?php echo get_the_title($root); ?>
+                        </a>
+                    </li>
+
+                    <?php 
+                        foreach ( $children as $post ) :
+                                                
+                            setup_postdata($post); ?>
+                            
+                            <li class="course_child">
+                                <a href="<?php the_permalink(); ?>" class="course_child_link  <?php if($current_url == get_permalink() ) { echo 'active'; } ?>">
+                                    <?php the_title(); ?>
+                                </a>
+                            </li>
                         
-                        <li class="course_child">
-                            <a href="<?php the_permalink(); ?>" class="course_child_link">
-                                <?php the_title(); ?>
-                            </a>
-                        </li>
-                    
 
-                    <?php endforeach;
-                    wp_reset_postdata(); 
-                ?>
-            </ul>
-            
-        </nav>
+                        <?php endforeach;
+                        wp_reset_postdata(); 
+                    ?>
+                </ul>
+                
+            </nav>
+        </aside>
 
-        <section class="course_content">
+
+        <section class="main course_content">
 
             <header class="course_head">
                 <h1><?php the_title(); ?></h1>

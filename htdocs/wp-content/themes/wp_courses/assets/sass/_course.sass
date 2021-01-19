@@ -1,17 +1,72 @@
 
 
+// CARDS
+
+.cards_grid
+    display: flex
+    width: 100%
+    max-width: none
+    justify-content: space-between
+    align-items: flex-start
+    flex-wrap: wrap
+    background-color: rgb(243, 244, 246)
+
+.course_card
+    display: flex
+    justify-content: space-between
+    flex-direction: column
+    align-items: flex-start
+    border-radius: 10px
+    width: 32%
+    flex: 0 0 32%
+    margin-bottom: 3%
+    text-decoration: none
+    padding: 2rem
+    min-height: 250px;
+    color: $tertiary-color
+    background-color: white
+
+    p
+        margin-bottom: 0
+        color: inherit
+
+    &:hover
+        .card_cta 
+            color: white
+            background-color: $secondary-color
+
+.card_title
+    font-size: 2rem
+    margin-top: 0
+    margin-bottom: 2rem
+    color: $secondary-color
+
+.card_cta
+    display: inline-block
+    border: 1px solid
+    padding: 5px 10px
+    line-height: 1.6
+    border-radius: 10px
+    color: $secondary-color
+    margin-top: 2rem
+    transition: all .4s
+
+
+
+
+
+
+// SINGLE
 
 .course
     display: flex
 
-.course_intro
-    width: 20%
-    flex: 0 0 20%
-    padding: 3rem 2rem
-    background-color: rgb(249, 250, 251)
-    border-right: 1px solid rgb(229, 231, 235)
-    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px
+.course_child
 
+    &:first-child
+        border-bottom: 1px solid $tertiary-color
+        padding-bottom: 8px
+        margin-bottom: 14px
 
 .course_child_link
     display: inline-block
@@ -22,8 +77,10 @@
     &:hover
         color: $primary-color
 
+    &.active
+        font-weight: bold
 
-
+    
 
 // ACCORDEONS
 
@@ -36,7 +93,8 @@
 
     .btn
         margin: 0
-        font-size: 2rem
+        font-size: 1.4rem
+        font-weight: normal
         color: white
 
         &:hover
