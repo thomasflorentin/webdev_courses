@@ -28,7 +28,7 @@ function wpcourses_load_scripts() {
     wp_enqueue_script( 
         'wpcourses-scripts', 
         get_template_directory_uri() . '/assets/js/script.js', 
-        array('array'), 
+        array('jquery'), 
         '1.0', 
         true 
     );
@@ -152,21 +152,21 @@ function wpcourses_comment_count( $count ) {
 
 // Add ACCORDEON Shortcode
 
-function accordeon_shortcode( $atts , $content = null ) {
+function niveau_shortcode( $atts , $content = null ) {
 
 	// Attributes
 	$atts = shortcode_atts(
 		array(
-			'titre' => 'Le titre de l\'accordéon ici',
+			'titre' => 'Niveau ?',
 		),
 		$atts
 	);
 	$titre = $atts['titre'];
 
-    $return_string = '<div class="entry-accordeon close">'; 
+    $return_string = '<div class="entry-level open">'; 
 
-   	$return_string .= '<div class="accordeon-title"><h3 class="h_3 btn-inline">'.$titre.'</h3></div>';
-   	$return_string .= '<div class="accordeon-content">'; 
+   	$return_string .= '<div class="level-title"><h2 class="btn">'.$titre.'</h2></div>';
+   	$return_string .= '<div class="level-content">'; 
 
    	$return_string .= $content; 
    	$return_string .= '</div>'; 
@@ -177,4 +177,4 @@ function accordeon_shortcode( $atts , $content = null ) {
 
 
 }
-add_shortcode( 'accordeon', 'accordeon_shortcode' );
+add_shortcode( 'niveau', 'niveau_shortcode' );

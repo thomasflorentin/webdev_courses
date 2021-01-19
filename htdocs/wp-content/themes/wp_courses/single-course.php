@@ -20,7 +20,14 @@
         $root_title = get_the_title($root) . ' <span class="sep">></span> ';
         $root_title_url = get_permalink($root);	
     }
-    $children = get_page_children($root, $pages);
+
+    $children = get_pages( 
+        array(
+            'post_type' => 'course',
+            'child_of' => $root,
+            'sort_column'   => 'menu_order'
+        )
+    );
 
 
     switch ($level) {
@@ -49,7 +56,6 @@
 
         <nav class="course_intro">
             
-            
             <ul class="">
 
                 <li class="course_child">
@@ -58,22 +64,21 @@
                     </a>
                 </li>
 
-
-            <?php 
-                foreach ( $children as $post ) :
-										
-                    setup_postdata($post); ?>
+                <?php 
+                    foreach ( $children as $post ) :
+                                            
+                        setup_postdata($post); ?>
+                        
+                        <li class="course_child">
+                            <a href="<?php the_permalink(); ?>" class="course_child_link">
+                                <?php the_title(); ?>
+                            </a>
+                        </li>
                     
-                    <li class="course_child">
-                        <a href="<?php the_permalink(); ?>" class="course_child_link">
-                            <?php the_title(); ?>
-                        </a>
-                    </li>
-                   
 
-                <?php endforeach;
-                wp_reset_postdata(); 
-            ?>
+                    <?php endforeach;
+                    wp_reset_postdata(); 
+                ?>
             </ul>
             
         </nav>

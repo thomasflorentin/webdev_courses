@@ -5,7 +5,7 @@ body
     font-size: 20px
 
 h2, h3
-    color: $tertiary-color
+    color: $secondary-color
 
 h1
     font-size: 3rem
@@ -23,7 +23,7 @@ h3
 
 
 p
-    font-size: 1.2rem
+    font-size: 1.2rem 
     line-height: 1.6
     margin-top: 0
     margin-bottom: 2rem
@@ -59,17 +59,18 @@ li:focus p
     margin-bottom: 10px
     border-bottom: 1px solid #bbb
 
-pre
-    background-color: #2e2b57
+pre,
+.hcb_wrap pre
+    background-color: #2e2b57 !important
+    border-radius: 10px !important
     padding: 30px
     margin-bottom: 2rem
 
     code
         font-size: 1.1rem
-        color: white
 
-code
-    color: #2e2b57
+.hcb_wrap pre code
+    background: none !important
 
 blockquote
     border-left: 5px solid $primary-color
