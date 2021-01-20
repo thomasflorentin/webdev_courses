@@ -15,6 +15,28 @@
 
         <main class="main">
 
+
+            <section class="clearfix " >
+
+                <h2 class="section_title">Actualités</h2> 
+
+                <div class="cards_grid">
+                    <?php 
+                        $args = array( 'post_type' => 'post', 'posts_per_page' => 4 );
+                        $the_query = new WP_Query( $args ); 
+                    ?>
+
+                    <?php if ( $the_query->have_posts() ) : ?>
+                        <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                            <?php get_template_part('template-parts/card', 'post'); ?>
+                        <?php endwhile;
+                        wp_reset_postdata(); ?>
+                    <?php endif; ?>
+                </div>
+
+                </section>
+
+
             <section class="clearfix">
                 <h2 class="section_title">Les derniers supports de cours</h2> 
                 <div class="cards_grid">
@@ -35,25 +57,7 @@
             </section>
 
 
-            <section class="clearfix " >
-
-                <h2 class="section_title">Actualités</h2> 
-
-                <div class="cards_grid">
-                    <?php 
-                        $args = array( 'post_type' => 'post', 'posts_per_page' => 4 );
-                        $the_query = new WP_Query( $args ); 
-                    ?>
-
-                    <?php if ( $the_query->have_posts() ) : ?>
-                        <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-                            <?php get_template_part('template-parts/card', 'post'); ?>
-                        <?php endwhile;
-                        wp_reset_postdata(); ?>
-                    <?php endif; ?>
-                </div>
-
-            </section>
+ 
 
 
             <section class="clearfix">
