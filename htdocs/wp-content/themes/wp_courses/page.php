@@ -13,7 +13,28 @@
 
         <nav class="course_menu">
 
-            <?php wp_link_pages(); ?>
+            <ul class="">
+
+                <li class="course_child">
+                    <a class="course_child_link">
+                        Actualités
+                    </a>
+                </li>
+
+                <?php
+                    $recent_posts = wp_get_recent_posts(array(
+                        'numberposts' => 10, 
+                        'post_status' => 'publish'
+                    ));
+                    foreach($recent_posts as $post) : ?>
+                        <li class="course_child">
+                            <a href="<?php the_permalink(); ?>" class="course_child_link  <?php if($current_url == get_permalink() ) { echo 'active'; } ?>">
+                                <?php the_title(); ?>
+                            </a>
+                        </li>
+                    <?php endforeach; wp_reset_query(); ?>
+
+            </ul>
             
         </nav>
     </aside>
@@ -28,10 +49,6 @@
         <div class="">
             <?php the_content(); ?>
         </div>
-
-        <footer class="footer">
-            <?php get_template_part( 'nav', 'below-single' ); ?>
-        </footer>
 
     </section>
 
