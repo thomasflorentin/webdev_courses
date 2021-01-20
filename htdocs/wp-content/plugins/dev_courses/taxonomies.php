@@ -18,4 +18,4 @@ function webdev_taxonomies_init() {
 	));
 
 }
-add_action('init', 'webdev_taxonomies_init', 0);
+add_action('init', 'webdev_taxonomies_init', 0); 

@@ -12,7 +12,7 @@ if ( ! empty( $comments_by_type['comment'] ) ) :
 <div class="paginated-comments-links"><?php paginate_comments_links(); ?></div>
 </nav>
 <?php endif; ?>
-<ul>
+<ul class="">
 <?php wp_list_comments( 'type=comment' ); ?>
 </ul>
 <?php if ( get_comment_pages_count() > 1 ) : ?>
