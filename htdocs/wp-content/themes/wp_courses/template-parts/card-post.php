@@ -24,6 +24,8 @@
 
             </div>
 
+            <?php the_excerpt(); ?>
+
         </div>
 
         <span class="card_cta">Lire l'actualité</span>
