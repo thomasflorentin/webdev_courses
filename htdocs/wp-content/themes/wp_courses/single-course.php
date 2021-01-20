@@ -65,6 +65,27 @@
                         <a href="<?php echo $root_title_url; ?>" class="course_child_link">
                             <?php echo get_the_title($root); ?>
                         </a>
+
+                        <div class="">
+                            <?php 
+                            $term_obj_list = get_the_terms( $root, 'level' );
+                            
+                            if ( $term_obj_list && ! is_wp_error( $term_obj_list ) ) : 
+            
+                                $levels = array();
+                            
+                                foreach ( $term_obj_list as $term ) {
+                                    $levels[] = $term->name;
+                                }
+                                                    
+                                $level = join( ", ", $levels );
+                                ?>
+                            
+                                <span class="card_meta"><?php printf( esc_html__( '%s', 'textdomain' ), esc_html( $level ) ); ?></span>
+
+                            <?php endif; ?>
+
+                        </div>
                     </li>
 
                     <?php 
