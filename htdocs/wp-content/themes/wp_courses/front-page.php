@@ -56,6 +56,25 @@
             </section>
 
 
+            <section class="clearfix">
+                <h2 class="section_title">Ressources externes</h2> 
+                <div class="cards_grid">
+
+                    <?php 
+                        $args = array( 'post_type' => 'ressource', 'posts_per_page' => -1 );
+                        $the_query = new WP_Query( $args ); 
+                    ?>
+
+                    <?php if ( $the_query->have_posts() ) : ?>
+                        <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                            <?php get_template_part('template-parts/card', 'ressource'); ?>
+                        <?php endwhile;
+                        wp_reset_postdata(); ?>
+                    <?php endif; ?>
+                </div>
+
+            </section>
+
         </main> 
 
     </div>

@@ -1,7 +1,7 @@
-    <a class="block post_card" href="<?php the_permalink(); ?>">
+    <a class="block ressource_card" href="<?php the_permalink(); ?>">
         <div>
 
-            <h2 class="post_title"><?php the_title(); ?></h2>
+            <h2 class="ressource_title"><?php the_title(); ?></h2>
             
             <div class="card_metas">
                 <?php 
@@ -26,5 +26,5 @@
 
         </div>
 
-        <span class="card_cta">Lire l'actualité</span>
+        <span class="card_cta">Voir les ressources</span>
     </a>

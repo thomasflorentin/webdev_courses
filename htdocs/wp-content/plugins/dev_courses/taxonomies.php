@@ -3,7 +3,7 @@
 function webdev_taxonomies_init() {
 	global $wp_taxonomies;
 
-	register_taxonomy('level', array('post', 'course'), array(
+	register_taxonomy('level', array( 'post', 'course', 'ressource' ), array(
 		'hierarchical' => false,
 		'show_ui' => true,
 		'query_var' => true,
