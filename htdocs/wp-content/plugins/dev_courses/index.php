@@ -20,12 +20,10 @@ if (!defined('ABSPATH'))
 /**
  * DEFINE PATHS
  */
-define('ODY_PATH', plugin_dir_path(__FILE__));
-define('ODY_FUNC_PATH', ODY_PATH . 'functions/');
-define('ODY_PT_PATH', ODY_PATH . 'post_types/');
-define('ODY_TAXO_PATH', ODY_PATH . 'taxonomies/');
-define('ODY_ACF_PATH', ODY_PATH . 'acf/');
-define('ODY_UTILS_PATH', ODY_PATH . 'utils/');
+define('DEVPLUG_PATH', plugin_dir_path(__FILE__));
+define('DEVPLUG_FUNC_PATH', DEVPLUG_PATH . 'functions/');
+define('DEVPLUG_ACF_PATH', DEVPLUG_PATH . 'acf/');
+define('DEVPLUG_UTILS_PATH', DEVPLUG_PATH . 'utils/');
 
 
 /**
@@ -34,17 +32,17 @@ define('ODY_UTILS_PATH', ODY_PATH . 'utils/');
 define('FACEBOOK', '');
 
 
-
 /**
  * Post Types & Taxonomies
  */
-require_once(ODY_PATH . 'cpt.php');
+require_once(DEVPLUG_PATH . 'cpt.php');
+require_once(DEVPLUG_PATH . 'taxonomies.php');
 
 
 /**
  * Custom fields. Need ACF plugin.
  */
-require_once(ODY_PATH . 'acf.php');
+require_once(DEVPLUG_PATH . 'acf.php');
 
 
 
