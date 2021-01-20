@@ -2,8 +2,9 @@
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-<main id="content" class="home">
+<div id="content" class="home">
     <div>
+
         <aside class="sidebar ">
             <nav class="home_menu">
                 
@@ -12,33 +13,53 @@
             </nav>
         </aside>
 
-        <section class="main cards_grid">
+        <main class="main">
 
-                <?php 
-                    $args = array( 'post_type' => 'course', 'posts_per_page' => -1, 'post_parent' => 0 );
-                    $the_query = new WP_Query( $args ); 
-                ?>
+            <section class="clearfix">
+                <h2 class="section_title">Les derniers supports de cours</h2> 
+                <div class="cards_grid">
 
-                <?php if ( $the_query->have_posts() ) : ?>
-                    <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-                        <a class="block course_card" href="<?php the_permalink(); ?>">
-                            <div>
+                    <?php 
+                        $args = array( 'post_type' => 'course', 'posts_per_page' => -1, 'post_parent' => 0 );
+                        $the_query = new WP_Query( $args ); 
+                    ?>
 
-                                <h2 class="card_title"><?php the_title(); ?></h2>
-                                <?php the_excerpt(); ?>
-                            </div>
+                    <?php if ( $the_query->have_posts() ) : ?>
+                        <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                            <?php get_template_part('template-parts/card', 'course'); ?>
+                        <?php endwhile;
+                        wp_reset_postdata(); ?>
+                    <?php endif; ?>
+                </div>
 
-                            <span class="card_cta">Voir ce cours</span>
-                        </a>
-                    <?php endwhile;
-                    wp_reset_postdata(); ?>
-                <?php endif; ?>
-
+            </section>
 
 
-        </section> 
+            <section class="clearfix " >
+
+                <h2 class="section_title">Actualités</h2> 
+
+                <div class="cards_grid">
+                    <?php 
+                        $args = array( 'post_type' => 'post', 'posts_per_page' => 4 );
+                        $the_query = new WP_Query( $args ); 
+                    ?>
+
+                    <?php if ( $the_query->have_posts() ) : ?>
+                        <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                            <?php get_template_part('template-parts/card', 'post'); ?>
+                        <?php endwhile;
+                        wp_reset_postdata(); ?>
+                    <?php endif; ?>
+                </div>
+
+            </section>
+
+
+        </main> 
+
     </div>
-</main>
+</div>
 
 <?php endwhile; endif; ?>
 

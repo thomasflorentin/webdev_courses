@@ -57,11 +57,23 @@ body
 .main
     width: 70%
     max-width: 55rem
-    padding-left: 3rem
-    padding-top: 3rem
+    padding: 3rem
     max-height: 100%
     overflow: scroll
-    padding-right: 3rem
+
+    .home &
+        width: 100%
+        max-width: none
+        background-color: rgb(243, 244, 246)
+
+    section
+        margin-bottom: 3rem
+
+        .section_title
+            font-size: 2rem
+            margin-top: 2rem
+            margin-bottom: 2rem
+            
 
 .sidebar
     width: 20%
@@ -75,3 +87,4 @@ body
 
     
 @import "course"
+@import "post"
