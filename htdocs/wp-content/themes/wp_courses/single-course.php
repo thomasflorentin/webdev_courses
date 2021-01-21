@@ -120,7 +120,7 @@
             </div>
             
             <footer class="footer">
-                <?php get_template_part( 'nav', 'below-single' ); ?>
+                <?php //get_template_part( 'nav', 'below-single' ); ?>
             </footer>
 
         </section>
