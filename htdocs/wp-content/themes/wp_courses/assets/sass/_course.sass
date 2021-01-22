@@ -73,6 +73,18 @@
 
 // SINGLE
 
+.course_menu
+    ul
+        @include up-to($medium)
+            display: flex
+            flex-wrap: wrap
+
+            .course_child
+                width: 49%
+
+            .course_child:first-child
+                width: 100%
+
 .course
     display: flex
 

@@ -1,5 +1,6 @@
 
 @import "init"
+@import "mixins"
 @import "reset"
 @import "links"
 @import "typos"
@@ -9,7 +10,6 @@
 
 
 body
-    height: 100vh
     margin: 0
     color: $onyx
     font-size: 16px
@@ -17,6 +17,8 @@ body
     display: flex
     flex-direction: column
     justify-content: space-between
+    @include at-least($medium)
+        height: 100vh
 
 #header
     background-color: $tertiary-color
@@ -49,12 +51,15 @@ body
 #content 
     height: auto
     flex: 1
-    max-height: 87vh
+    @include at-least($medium)
+        max-height: 87vh
 
     & > article,
     & > div
         height: 100%
         display: flex
+        @include up-to($medium)
+            flex-direction: column
     
     & > div
         justify-content: space-between
@@ -66,11 +71,14 @@ body
     padding: 2rem
 
 .main
-    width: 70%
     max-width: 55rem
-    padding: 3rem
+    padding: 3rem 1rem
+    margin-bottom: 3rem
     max-height: 100%
     overflow: scroll
+    @include at-least($medium)
+        width: 70%
+        padding: 3rem
 
     .home &
         width: 100%
@@ -87,14 +95,16 @@ body
             
 
 .sidebar
-    width: 20%
-    min-width: 250px
-    flex: 0 0 20%
-    padding: 3rem 2rem
+    padding: 1rem 1rem
     background-color: rgb(249, 250, 251)
     border-right: 1px solid rgb(229, 231, 235)
     box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px
-
+    overflow-x: scroll
+    @include at-least($medium)
+        width: 20%
+        padding: 3rem 2rem
+        min-width: 250px
+        flex: 0 0 20%
 
     
 @import "course"
