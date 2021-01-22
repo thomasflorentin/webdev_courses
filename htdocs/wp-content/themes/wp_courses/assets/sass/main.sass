@@ -26,9 +26,17 @@ body
     height: 6vh
     line-height: 6vh
     display: flex
+    justify-content: space-between
+
+#branding
+    flex: 1
 
 #menu
     color: white
+    flex: 1
+    ul
+        display: flex
+        justify-content: flex-end
 
     a
         color: inherit
@@ -73,7 +81,6 @@ body
 .main
     max-width: 55rem
     padding: 3rem 1rem
-    margin-bottom: 3rem
     max-height: 100%
     overflow: scroll
     @include at-least($medium)
