@@ -134,6 +134,10 @@
     & + & 
         margin-top: 2rem
 
+    &.open
+        .btn:after
+            transform: rotate(90deg)
+
 .level-title
     background-color: $secondary-color	
     padding: 1.4rem
@@ -144,8 +148,16 @@
         font-weight: normal
         color: white
 
+        &::after
+            content: ' ->'
+            display: inline-block
+            margin-left: 20px
+            transition: all .1s
+
         &:hover
             cursor: pointer
+
+
 
 .level-content 
 	margin: 20px 0
@@ -154,6 +166,7 @@
 
 	.close &
 		max-height: 0
+
 
 
 
