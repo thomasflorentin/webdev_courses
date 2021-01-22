@@ -6,17 +6,17 @@ function custom_post_type() {
  
     // Set UI labels for Custom Post Type
         $labels = array(
-            'name'                => _x( 'Cours', 'Post Type General Name', 'webdevcourses-plugin' ),
-            'singular_name'       => _x( 'Cours', 'Post Type Singular Name', 'webdevcourses-plugin' ),
-            'menu_name'           => __( 'Cours', 'webdevcourses-plugin' ),
-            'parent_item_colon'   => __( 'Cours parent', 'webdevcourses-plugin' ),
-            'all_items'           => __( 'Tous les Cours', 'webdevcourses-plugin' ),
-            'view_item'           => __( 'Voir le Cours', 'webdevcourses-plugin' ),
-            'add_new_item'        => __( 'Ajouter un nouveau Cours', 'webdevcourses-plugin' ),
-            'add_new'             => __( 'Ajouter un cours', 'webdevcourses-plugin' ),
-            'edit_item'           => __( 'Editer Course', 'webdevcourses-plugin' ),
-            'update_item'         => __( 'Mettre à jour le Cours', 'webdevcourses-plugin' ),
-            'search_items'        => __( 'Rechercher Cours', 'webdevcourses-plugin' ),
+            'name'                => _x( 'Supports de Cours', 'Post Type General Name', 'webdevcourses-plugin' ),
+            'singular_name'       => _x( 'Supports de Cours', 'Post Type Singular Name', 'webdevcourses-plugin' ),
+            'menu_name'           => __( 'Supports de Cours', 'webdevcourses-plugin' ),
+            'parent_item_colon'   => __( 'Support parent', 'webdevcourses-plugin' ),
+            'all_items'           => __( 'Tous les Supports', 'webdevcourses-plugin' ),
+            'view_item'           => __( 'Voir le Supports', 'webdevcourses-plugin' ),
+            'add_new_item'        => __( 'Ajouter un nouveau Support', 'webdevcourses-plugin' ),
+            'add_new'             => __( 'Ajouter un Support', 'webdevcourses-plugin' ),
+            'edit_item'           => __( 'Editer Support', 'webdevcourses-plugin' ),
+            'update_item'         => __( 'Mettre à jour le Support', 'webdevcourses-plugin' ),
+            'search_items'        => __( 'Rechercher Support', 'webdevcourses-plugin' ),
             'not_found'           => __( 'Not Found', 'webdevcourses-plugin' ),
             'not_found_in_trash'  => __( 'Not found in Trash', 'webdevcourses-plugin' ),
         );
