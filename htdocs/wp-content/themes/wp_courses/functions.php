@@ -178,3 +178,20 @@ function niveau_shortcode( $atts , $content = null ) {
 
 }
 add_shortcode( 'niveau', 'niveau_shortcode' );
+
+
+
+
+//Custom login page
+function clp_login_head() {
+         
+    echo '<style>'; //Begin custom styles
+    echo '.login #nav a, .login #backtoblog a { color: #ff8552ff !important; }'; //Login page link color
+    echo '.login h1 a { background:url("' . get_bloginfo('stylesheet_directory') . '/assets/logo.png"); width: 300px; height: 75px; background-size: contain; background-repeat: no-repeat; }'; //Login page logo
+    echo '.login .button-primary { background:#ff8552ff; border: none; }'; //Login page button color
+    echo '.login form .input { border-radius: 0;  }'; //Login page button color
+    echo '.login form { border: none; border-radius: 10px; }'; //Login page button color
+    echo '</style>'; //End custom styles
+         
+}
+add_action('login_head', 'clp_login_head');
