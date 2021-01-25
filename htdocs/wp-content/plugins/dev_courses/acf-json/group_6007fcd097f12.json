@@ -3,10 +3,29 @@
     "title": "Détails du cours",
     "fields": [
         {
-            "key": "field_6007fcde054e1",
-            "label": "Niveau",
-            "name": "course_level",
-            "type": "text",
+            "key": "field_600e7d4681565",
+            "label": "Ce support concerne des Excercices \/ Devoirs (QCM, ITW Questions, TP)",
+            "name": "is_interview",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_600e80fe1a7e6",
+            "label": "Vide",
+            "name": "",
+            "type": "tab",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,11 +34,8 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "placement": "top",
+            "endpoint": 0
         }
     ],
     "location": [
@@ -39,5 +55,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1611138969
+    "modified": 1611563429
 }
