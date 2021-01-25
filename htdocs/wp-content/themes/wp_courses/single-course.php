@@ -112,6 +112,17 @@
         <section class="main course_content">
 
             <header class="course_head">
+                <div class="txt-ctr">
+                    <?php 
+                        $categories = get_the_category();
+                        
+                        if ( ! empty( $categories ) ) {
+                            echo '<span class="card_meta">' . esc_html( $categories[0]->name ) . '</span>';   
+                        }
+                    ?>
+                </div>
+
+
                 <h1><?php the_title(); ?></h1>
             </header>
             
