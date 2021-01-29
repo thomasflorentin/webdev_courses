@@ -13,7 +13,7 @@
 
         <nav class="course_menu">
 
-            <ul class="">
+            <ol>
 
                 <li class="course_child">
                     <a class="course_child_link">
@@ -34,7 +34,7 @@
                         </li>
                     <?php endforeach; wp_reset_query(); ?>
 
-            </ul>
+            </ol>
             
         </nav>
     </aside>

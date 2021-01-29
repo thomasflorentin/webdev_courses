@@ -59,7 +59,7 @@
 
             <nav class="course_menu">
                 
-                <ul class="">
+                <ol>
 
                     <li class="course_child">
                         <a href="<?php echo $root_title_url; ?>" class="course_child_link">
@@ -103,7 +103,7 @@
                         <?php endforeach;
                         wp_reset_postdata(); 
                     ?>
-                </ul>
+                </ol>
                 
             </nav>
         </aside>
