@@ -27,13 +27,15 @@ body
     line-height: 6vh
     display: flex
     justify-content: space-between
+    @include up-to(medium) 
+        flex-direction: column
+        height: auto
 
 #branding
     flex: 1
 
 #menu
     color: white
-    flex: 1
     
     ul
         display: flex
