@@ -13,13 +13,15 @@
 
         <nav class="course_menu">
 
-            <ol>
-
+            <ul class="">
                 <li class="course_child">
                     <a class="course_child_link">
                         Actualités
                     </a>
                 </li>
+            </ul>
+
+            <ol class="">
 
                 <?php
                     $recent_posts = wp_get_recent_posts(array(

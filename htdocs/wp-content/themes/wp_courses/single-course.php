@@ -59,7 +59,7 @@
 
             <nav class="course_menu">
                 
-                <ol>
+                <ul class="">
 
                     <li class="course_child">
                         <a href="<?php echo $root_title_url; ?>" class="course_child_link">
@@ -87,6 +87,9 @@
 
                         </div>
                     </li>
+                </ul>
+
+                <ol class="">
 
                     <?php 
                         foreach ( $children as $post ) :
