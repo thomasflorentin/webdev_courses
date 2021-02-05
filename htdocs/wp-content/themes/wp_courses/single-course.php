@@ -94,16 +94,33 @@
                     <?php 
                         foreach ( $children as $post ) :
                                                 
-                            setup_postdata($post); ?>
-                            
-                            <li class="course_child">
-                                <a href="<?php the_permalink(); ?>" class="course_child_link  <?php if($current_url == get_permalink() ) { echo 'active'; } ?> <?php if( get_field('is_interview') ) { echo 'interview_item'; } ?>">
-                                    <?php the_title(); ?>
-                                </a>
-                            </li>
-                        
+                            setup_postdata($post);
 
-                        <?php endforeach;
+                            if( get_field('support_formateur') ) { 
+                            
+                                if( current_user_can('editor') || current_user_can('administrator') ) { ?>
+
+                                    <li class="course_child">
+                                        <a href="<?php the_permalink(); ?>" class="course_child_link  <?php if($current_url == get_permalink() ) { echo 'active'; } ?> <?php if( get_field('is_interview') ) { echo 'interview_item'; } ?>">
+                                            <?php the_title(); ?>
+                                        </a>
+                                    </li>
+
+                            <?php
+                                }
+
+                            }
+                            else { ?>
+
+                                <li class="course_child">
+                                    <a href="<?php the_permalink(); ?>" class="course_child_link  <?php if($current_url == get_permalink() ) { echo 'active'; } ?> <?php if( get_field('is_interview') ) { echo 'interview_item'; } ?>">
+                                        <?php the_title(); ?>
+                                    </a>
+                                </li>
+
+
+                            <?php }
+                        endforeach;
                         wp_reset_postdata(); 
                     ?>
                 </ol>

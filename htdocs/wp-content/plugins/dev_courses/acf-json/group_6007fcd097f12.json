@@ -1,11 +1,30 @@
 {
     "key": "group_6007fcd097f12",
-    "title": "Détails du cours",
+    "title": "Détails du Support de cours",
     "fields": [
         {
             "key": "field_600e7d4681565",
             "label": "Ce support concerne des Excercices \/ Devoirs (QCM, ITW Questions, TP)",
             "name": "is_interview",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_601d2031f4fac",
+            "label": "Ce support est réservé au Formateur ?",
+            "name": "support_formateur",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -55,5 +74,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1611563429
+    "modified": 1612521635
 }
