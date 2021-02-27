@@ -100,8 +100,8 @@
                             
                                 if( current_user_can('editor') || current_user_can('administrator') ) { ?>
 
-                                    <li class="course_child">
-                                        <a href="<?php the_permalink(); ?>" class="course_child_link courses_child-teacher <?php if($current_url == get_permalink() ) { echo 'active'; } ?> <?php if( get_field('is_interview') ) { echo 'interview_item'; } ?>">
+                                    <li class="course_child courses_child-teacher">
+                                        <a href="<?php the_permalink(); ?>" class="course_child_link  <?php if($current_url == get_permalink() ) { echo 'active'; } ?> <?php if( get_field('is_interview') ) { echo 'interview_item'; } ?>">
                                             <?php the_title(); ?>
                                         </a>
                                     </li>
